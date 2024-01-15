@@ -1,7 +1,7 @@
 import logo from '../assets/ndseLogoPrimary.png'
 
 
-function Footer() {
+function Header() {
 
 
 
@@ -13,4 +13,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default Header
