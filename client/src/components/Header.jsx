@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '../assets/ndseLogoPrimary.png'
 
 
@@ -11,8 +12,9 @@ function Header() {
         <header>
             <img src={logo} alt="NSDE Logo" />
             <nav>
-                <a href="#">Home</a>
-                <a href="#">About</a>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+              
                 <a href="#">Vision</a>
                 <a href="#">Project</a>
                 <a href="#">Get Involved</a>
