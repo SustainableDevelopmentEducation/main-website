@@ -16,7 +16,8 @@ export default function About() {
       <div className="foundation flex p-32 gap-10">
         <div className="text w-1/2 flex flex-col gap-4 ">
           <h1 className="text-4xl font-bold text-black">
-            Our Foundation's <span className="text-deep-orange-700">Journey</span>
+            Our Foundation's{" "}
+            <span className="text-deep-orange-700">Journey</span>
           </h1>
           <p className=" text-gray-600 mb-5 w-5/6 text-xl ">
             The inception of SDIE Foundation was deeply influenced by the global
@@ -34,7 +35,51 @@ export default function About() {
           </p>
         </div>
         <div className="pic w-1/2 ">
-          <img src={Foundation} className=" h-full"/>
+          <img src={Foundation} className=" h-full" />
+        </div>
+      </div>
+      <div className="mission flex p-32 gap-10">
+        <div className="pic w-1/2 ">
+          <img src={Foundation} className=" h-full" />
+        </div>
+        <div className="text w-1/2 flex flex-col gap-4 ">
+          <h1 className="text-4xl font-bold text-black">
+            Our{" "}
+            <span className="text-deep-orange-700">Mission's Formulation</span>
+          </h1>
+          <p className=" text-gray-600 mb-5 w-5/6 text-xl ">
+            Our mission was meticulously crafted to address the specific targets
+            within Goal 4: Quality Education while making meaningful
+            contributions to other interconnected SDGs.
+          </p>
+          <p className="text-gray-600 w-5/6 text-xl ">
+            We understood that quality education is not only a fundamental human
+            right but also a powerful catalyst for sustainable development
+            across multiple fronts. This understanding led us to align our work
+            with a broader vision of global progress.
+          </p>
+        </div>
+      </div>
+      <div className="foundation flex p-32 gap-10">
+        <div className="text w-1/2 flex flex-col gap-4 ">
+          <h1 className="text-4xl font-bold text-black">
+            <span className="text-deep-orange-700">Collaborations</span> &{" "}
+            <span className="text-deep-orange-700">Partnerships</span>
+          </h1>
+          <p className=" text-gray-600 mb-5 w-5/6 text-xl ">
+            Throughout our journey, we are forging valuable partnerships and
+            collaborations with organizations that share our commitment to the
+            SDGs.
+          </p>
+          <p className="text-gray-600 w-5/6 text-xl ">
+            These alliances have allowed us to extend our impact beyond
+            individual goals, creating a holistic approach to sustainable
+            development. By collaborating with like-minded entities, we harness
+            collective strength to address complex global challenges.
+          </p>
+        </div>
+        <div className="pic w-1/2 ">
+          <img src={Foundation} className=" h-full" />
         </div>
       </div>
     </section>
