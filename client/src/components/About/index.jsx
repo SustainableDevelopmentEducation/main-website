@@ -1,5 +1,6 @@
 import Background from "../../assets/About.jpg";
 import Foundation from "../../assets/Foundation.jpg";
+import Subscribe from "../Subscribe";
 export default function About() {
   return (
     <section>
@@ -82,6 +83,7 @@ export default function About() {
           <img src={Foundation} className=" h-full" />
         </div>
       </div>
+      <Subscribe/>
     </section>
   );
 }
