@@ -1,18 +1,19 @@
-const mongoose = require ('mongoose');
-const {Schema} = mongoose;
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+require('dotenv').config();
 
-const URI = ''
+const URI = process.env.MONGO_DB;
 mongoose.connect(URI);
-mongoose.connection.once('open',()=> console.log('Connected to Database'));
+mongoose.connection.once('open', () => console.log('Connected to Database'));
 
-const initiativesSchema = new Schema ({
-    name:{type: String, required:true},
-    description: {type: String, required: true},
-    brief: {type: String, required: true},
-    tags: {type: String, required: true},
-    created_at: {type: Date, default: Date.now}
-})
+const initiativeSchema = new Schema({
+  name: { type: String, required: true },
+  description: { type: String, required: true },
+  brief: { type: String, required: true },
+  tags: { type: String, required: true },
+  created_at: { type: Date, default: Date.now },
+});
 
-const ListItem = mongoose.model('ListItem',listItemSchema);
+const Initiative = mongoose.model('Initiative', initiativeSchema);
 
-module.exports = {ListItem,URI};
+module.exports = { Initiative, URI };
