@@ -1,4 +1,14 @@
 const express = require('express');
-const intativeController = {
-    add()
-}
+const { Initiative } = require('../models/models');
+const initiativeController = {
+  async getAllInitiatives(req, res, next) {
+    try {
+      const allInitiatives = await Initiative.find({});
+      res.locals.all = allInitiatives;
+      return next();
+    } catch (err) {
+      return next({ log: 'An error occurred in getAllInitiatives' });
+    }
+  },
+};
+module.exports = initiativeController;

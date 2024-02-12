@@ -13,10 +13,7 @@ app.get('/', (req, res) => {
 
 app.use('/initiative', initiativeRouter);
 
-app.use('/', (req, res) => {
-  console.log('an error occur when sending request');
-  return res.sendStatus(400);
-});
+app.use('/', (req, res) => res.sendStatus(404));
 
 app.use((err, req, res, next) => {
   const defaultError = {

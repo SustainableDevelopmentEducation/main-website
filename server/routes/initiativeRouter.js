@@ -1,10 +1,10 @@
 const express = require('express');
-const initiativeRouter = express();
 const router = express.Router();
+const { getAllInitiatives } = require('../controllers/initiativeController');
 
-router.get('/', (req, res) => {
+router.get('/', getAllInitiatives,(req, res) => {
   console.log('initiativeRouter');
-  return res.json('get request successful from initiative');
+  return res.status(200).json(res.locals.all);
 });
 
 module.exports = router;
