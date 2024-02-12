@@ -10,7 +10,7 @@ const initiativeSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   brief: { type: String, required: true },
-  tags: { type: String, required: true },
+  tags: { type: Array, required: true },
   created_at: { type: Date, default: Date.now },
 });
 
