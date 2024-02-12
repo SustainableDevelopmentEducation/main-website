@@ -1,0 +1,48 @@
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    .flexcolumn();
+    background-color: white;
+    color: black;
+
+    header {
+        .flexrow();
+
+        img {
+            max-width: 200px;
+        }
+        nav {
+            .flexrow();
+        }
+    }
+    main {
+        .flexcolumn();
+    }
+    footer {
+        .flexcolumn();
+
+        .row {
+            .flexrow();
+
+
+            img {
+                max-width: 200px;
+            }
+
+            .column {
+                .flexcolumn();
+            }
+        }
+    }
+}
