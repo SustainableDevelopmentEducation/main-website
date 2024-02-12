@@ -1,0 +1,29 @@
+// const express = require('express');
+const { Initiative } = require('../models/models');
+const initiativeController = {
+  async createInitiative(req, res, next) {
+    const { name, description, brief, tags } = req.body;
+    try {
+      const addInitiative = await Initiative.create({
+        name: name,
+        description: description,
+        brief: brief,
+        tags: tags,
+      });
+      res.locals.newInitiative = addInitiative;
+      return next();
+    } catch (err) {
+      return next({ log: 'An error occurred in createInitiative' });
+    }
+  },
+  async getAllInitiatives(req, res, next) {
+    try {
+      const allInitiatives = await Initiative.find({});
+      res.locals.all = allInitiatives;
+      return next();
+    } catch (err) {
+      return next({ log: 'An error occurred in getAllInitiatives' });
+    }
+  },
+};
+module.exports = initiativeController;
