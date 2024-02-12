@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 require('dotenv').config();
-
+// console.log('line reached');
 const URI = process.env.MONGO_DB;
+
 mongoose.connect(URI);
 mongoose.connection.once('open', () => console.log('Connected to Database'));
 
