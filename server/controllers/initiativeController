@@ -25,5 +25,36 @@ const initiativeController = {
       return next({ log: 'An error occurred in getAllInitiatives' });
     }
   },
+  async deleteInitiative(req, res, next) {
+    console.log('inside deleted');
+    const { id } = req.params;
+    try {
+      const deleted = await Initiative.findOneAndDelete({ _id: id });
+      if (!deleted)
+        return next({
+          log: 'nothing to delete',
+          message: { error: 'Nothing to delete' },
+        });
+      else console.log('Initiative deleted', deleted);
+      return next();
+    } catch (err) {
+      return next({ log: 'An error occurred in deleteInitiative' });
+    }
+  },
+  async updateInitiative(req, res, next) {
+    const { _id,name, description, brief, tags } = req.body;
+    try {
+      const updated = await Initiative.findOneAndUpdate({_id},{
+        name: name,
+        description: description,
+        brief: brief,
+        tags: tags,
+      });
+      res.locals.updated = updated;
+      return next();
+    } catch (err) {
+      return next({ log: 'error occurred in updated initiative' });
+    }
+  },
 };
 module.exports = initiativeController;

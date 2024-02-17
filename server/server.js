@@ -4,12 +4,13 @@ const { Initiative } = require('./models/models');
 const initiativeRouter = require('./routes/initiativeRouter');
 const app = express();
 
-const PORT = '5173';
+const PORT = '8080';
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
+
 
 app.use('/initiative', initiativeRouter);
 
