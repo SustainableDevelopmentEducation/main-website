@@ -7,9 +7,10 @@ const app = express();
 const PORT = '8080';
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
-});
+// app.get('/', (req, res) => {
+//   return res.status(200).sendFile(path.join(__dirname, '../client/'));
+// });
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/initiative', initiativeRouter);
 
